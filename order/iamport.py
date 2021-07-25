@@ -9,6 +9,8 @@ def get_token():
     url = "https://api.iamport.kr/users/getToken"
     req = requests.post(url, data=access_data)
     access_res = req.json()
+    print('access_res', access_res)
+    print('res', access_res['response']['access_token'])
 
     if access_res['code'] is 0:
         return access_res['response']['access_token']
