@@ -101,9 +101,7 @@ class OrderImpAjaxView(View):
         order = Order.objects.get(id=order_id)
 
         merchant_id = request.POST.get('merchant_id')
-        print(merchant_id)
         imp_id = request.POST.get('imp_id')
-        print(imp_id)
         amount = request.POST.get('amount')
 
         try:
@@ -118,6 +116,7 @@ class OrderImpAjaxView(View):
         if trans is not None:
             trans.transaction_id = imp_id
             # trans.success = True
+            print(trans)
             trans.save()
             order.paid = True
             order.save()

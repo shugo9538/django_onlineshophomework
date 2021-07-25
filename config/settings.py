@@ -25,9 +25,9 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = 'j!qk0@mcb*3a+r@w_@!hy7yggqnw=p)@o@x=l91g@_e+zp1h3*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*.compute.amazonaws.com']
+ALLOWED_HOSTS = ['*.compute.amazonaws.com', '127.0.0.1', 'localhost', 'ec2-3-36-63-24.ap-northeast-2.compute.amazonaws.com']
 
 # DEBUG = True
 #
@@ -148,16 +148,16 @@ SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/'
 
-AWS_ACCESS_KEY_ID = 'AKIAZCE3NT4TEDOZUKWX'
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_ACCESS_KEY_ID = 'AKIAZCE3NT4TPP4IF24E'
+AWS_SECRET_ACCESS_KEY = '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'
 
 AWS_REGION = 'ap-northeast-2'
-AWS_STORAGE_BUCKET_NAME = 'django-onlineshophomework'
+AWS_STORAGE_BUCKET_NAME = 'myonlineshop20210724'
 AWS_S3_CUSTOM_DOMAIN = f's3.{AWS_REGION}.amazonaws.com/{AWS_STORAGE_BUCKET_NAME}'
 AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',
 }
-AWS_DEFAULT_ACL = 'public-read'
+AWS_DEFAULT_ACL = 'public-read-write'
 AWS_LOCATION = ''
 
 STATIC_URL = f'http://{AWS_S3_CUSTOM_DOMAIN}/{AWS_LOCATION}'

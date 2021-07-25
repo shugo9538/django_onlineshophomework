@@ -79,9 +79,9 @@ class OrderTransactionManager(models.Manager):
         return transaction.merchant_order_id
 
     def get_transaction(self, merchant_order_id):
-        print(merchant_order_id)
+        print('merchent_order_id', merchant_order_id)
         result = find_transaction(merchant_order_id)
-        print(result)
+        print('result', result)
         if result['status'] == 'paid':
             return result
         else:

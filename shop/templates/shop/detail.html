@@ -21,4 +21,20 @@
             <h5><span class="badge badge-secondary">Description</span>{{product.description|linebreaks}}</h5>
         </div>
     </div>
+    <div class="review_list">
+    <table>
+        <tr>
+	    {% for review in reviews %}
+	    <td> review.email </td>
+	    <td> review.comments </td>
+	    {% endfor %}
+        </tr>
+        <tr>
+            <form action="" method="post">
+                <input type="text" name="myReview">
+                <input type="submit" value="리뷰 등록하기">
+            </form>
+        </tr>
+    </table>
+</div>
 {% endblock %}
